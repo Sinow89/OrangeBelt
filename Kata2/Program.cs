@@ -18,8 +18,6 @@ class Program
         var character2 = new Character("Dalia", 100);
         character.Attack(character2, 50);
         
-        
-        
         character.HealthChanged += OnHealthChanged;
         void OnHealthChanged(int newHealth)
         {

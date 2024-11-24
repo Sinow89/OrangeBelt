@@ -2,7 +2,6 @@
 
 public class Character
 {
-
     public string Name { get; private set; }
     public int Health { get; private set; }
     public int Damage { get; private set; }
@@ -16,9 +15,6 @@ public class Character
     public delegate void CharacterAction(Character target, int amount);
     
     public event Action<int> HealthChanged;
-    
-    
-    
     
     public void Attack(Character target, int damage)
     {
