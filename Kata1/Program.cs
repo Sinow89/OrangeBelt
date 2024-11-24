@@ -21,10 +21,4 @@ class Program
         }
         Console.WriteLine();
     }
-
-    
-
-
-
-    
 }
