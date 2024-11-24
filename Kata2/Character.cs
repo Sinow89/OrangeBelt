@@ -1,25 +1,38 @@
 ﻿namespace Kata2;
 
+public delegate void CharacterAction(Character target, int amount);
+
 public class Character
 {
+    private int health;
     public string Name { get; private set; }
-    public int Health { get; private set; }
-    public int Damage { get; private set; }
-
+    public int Health 
+    { 
+        get => health;
+        private set
+        {
+            health = value;
+            HealthChanged?.Invoke(health);
+        }
+    }
+    private CharacterAction attackAction;
     public Character(string name, int health)
     {
         Name = name;
         Health = health;
+        attackAction = (target, damage) =>
+        {
+            Console.WriteLine($"{Name} attacks {target.Name} for {damage} damage.");
+            Health -= damage;
+        };
     }
-    
-    public delegate void CharacterAction(Character target, int amount);
     
     public event Action<int> HealthChanged;
     
     public void Attack(Character target, int damage)
     {
-        target.Health = Health - damage;
-        Console.WriteLine($"{Name} attacked {target.Name} with {damage}.");
+        
+        attackAction(target, damage);
     }
     
 }

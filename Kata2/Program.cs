@@ -14,16 +14,17 @@ class Program
 {
     static void Main()
     {
-        var character = new Character("Arin", 100);
-        var character2 = new Character("Dalia", 100);
-        character.Attack(character2, 50);
+        var arin = new Character("Arin", 100);
+        var dalia = new Character("Dalia", 100);
         
-        character.HealthChanged += OnHealthChanged;
-        void OnHealthChanged(int newHealth)
-        {
-            Console.WriteLine($"[Event] Character's health changed to {newHealth}.");
-        }
-
+        arin.HealthChanged += (newHealth) => 
+            Console.WriteLine($"[Event] {arin.Name}'s health changed to {newHealth}.\n");
+        
+        dalia.HealthChanged += (newHealth) => 
+            Console.WriteLine($"[Event] {dalia.Name}'s health changed to {newHealth}.\n");
+        
+        arin.Attack(dalia, 10);
+        dalia.Attack(arin, 10);
         
     }
 }
