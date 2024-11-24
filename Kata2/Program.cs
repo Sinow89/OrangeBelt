@@ -15,7 +15,7 @@ class Program
     static void Main()
     {
         var arin = new Character("Arin", 100);
-        var dalia = new Character("Dalia", 100);
+        var dalia = new Character("Dalia", 120);
         
         arin.HealthChanged += (newHealth) => 
             Console.WriteLine($"[Event] {arin.Name}'s health changed to {newHealth}.\n");
@@ -24,7 +24,7 @@ class Program
             Console.WriteLine($"[Event] {dalia.Name}'s health changed to {newHealth}.\n");
         
         arin.Attack(dalia, 10);
-        dalia.Attack(arin, 10);
+        dalia.Attack(arin, 15);
         
     }
 }

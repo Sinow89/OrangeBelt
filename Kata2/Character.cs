@@ -4,17 +4,9 @@ public delegate void CharacterAction(Character target, int amount);
 
 public class Character
 {
-    private int health;
+    public int Health { get; private set; }
     public string Name { get; private set; }
-    public int Health 
-    { 
-        get => health;
-        private set
-        {
-            health = value;
-            HealthChanged?.Invoke(health);
-        }
-    }
+   
     private CharacterAction attackAction;
     public Character(string name, int health)
     {
@@ -31,8 +23,7 @@ public class Character
     
     public void Attack(Character target, int damage)
     {
-        
         attackAction(target, damage);
+        HealthChanged?.Invoke(Health);
     }
-    
 }
