@@ -2,7 +2,7 @@
 
 namespace Kata1;
 
-public  class Character
+public class Character
 {
     public string Name { get; private set; }
     public string Type { get; private set; }
@@ -21,7 +21,7 @@ public  class Character
     
     public void Attack()
     {
-        Console.WriteLine($"{Name} attacks Orc ");
+        Console.WriteLine($"{Name} attacks Orc");
     }
     
     public void Heal(Character character)
