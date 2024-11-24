@@ -17,6 +17,5 @@ class Program
         
         arin.Attack(dalia, 10);
         dalia.Attack(arin, 15);
-        
     }
 }
