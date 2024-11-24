@@ -1,27 +1,19 @@
 ﻿namespace Kata2;
 
-/* Arin attacks Dalia for 10 damage.
-[Event] Dalia's health changed to 90.
-
-Dalia heals herself for 15 health.
-[Event] Dalia's health changed to 105.
-
-Arin performs a special action!
-[Event] Arin's special action was performed.
-*/
-
 class Program
 {
     static void Main()
     {
-        var arin = new Character("Arin", 100);
-        var dalia = new Character("Dalia", 120);
+        var arin = new Character("Arin", 120);
+        var dalia = new Character("Dalia", 100);
         
-        arin.HealthChanged += (newHealth) => 
-            Console.WriteLine($"[Event] {arin.Name}'s health changed to {newHealth}.\n");
+        arin.HealthChanged += OnHealthChanged;
+        dalia.HealthChanged += OnHealthChanged;
         
-        dalia.HealthChanged += (newHealth) => 
-            Console.WriteLine($"[Event] {dalia.Name}'s health changed to {newHealth}.\n");
+        void OnHealthChanged(Character character, int newHealth)
+        {
+            Console.WriteLine($"[Event] {character.Name}'s health changed to {newHealth}.");
+        }
         
         arin.Attack(dalia, 10);
         dalia.Attack(arin, 15);

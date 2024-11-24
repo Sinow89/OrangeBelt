@@ -15,15 +15,21 @@ public class Character
         attackAction = (target, damage) =>
         {
             Console.WriteLine($"{Name} attacks {target.Name} for {damage} damage.");
-            Health -= damage;
         };
     }
     
-    public event Action<int> HealthChanged;
+    public event Action<Character,int> HealthChanged;
     
     public void Attack(Character target, int damage)
     {
         attackAction(target, damage);
-        HealthChanged?.Invoke(Health);
+        target.TakeDamage(damage);
     }
+    
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+        HealthChanged?.Invoke(this, Health);
+    }
+    
 }
