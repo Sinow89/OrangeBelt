@@ -8,6 +8,11 @@ public class AbilityContainer<T>
     {
         abilities.Add(ability);
     }
+    
+    public void RemoveAbility(T ability)
+    {
+        abilities.Remove(ability);
+    }
 
     public IEnumerable<T> GetAbilities()
     {

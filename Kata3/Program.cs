@@ -1,13 +1,23 @@
-﻿namespace Kata3;
+﻿using System.Runtime.CompilerServices;
+
+namespace Kata3;
 
 class Program
 {
     static void Main()
     {
         var abilityContainer = new AbilityContainer<IAbility>();
-        abilityContainer.AddAbility(new AttackAbility("Slash Attack", "Deals 15 damage"));
-        abilityContainer.AddAbility(new HealAbility("Healing Light", "Restores 20 health"));
+        
+        var slashAttack = new AttackAbility("Slash Attack", "Deals 15 damage");
+        var healingLight = new HealAbility("Healing Light", "Restores 20 health");
+
+        abilityContainer.AddAbility(slashAttack);
+        abilityContainer.AddAbility(healingLight);
+        
         Adding();
+        Display();
+        
+        abilityContainer.RemoveAbility(slashAttack);
         Display();
         
         void Adding()
