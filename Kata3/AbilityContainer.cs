@@ -18,5 +18,4 @@ public class AbilityContainer<T>
     {
         return abilities;
     }
-    
 }

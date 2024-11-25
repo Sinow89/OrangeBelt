@@ -10,21 +10,20 @@ class Program
         
         var slashAttack = new AttackAbility("Slash Attack", "Deals 15 damage");
         var healingLight = new HealAbility("Healing Light", "Restores 20 health");
-
-        abilityContainer.AddAbility(slashAttack);
-        abilityContainer.AddAbility(healingLight);
         
-        Adding();
+        AddAbilities(new()
+        {
+            slashAttack,
+            healingLight
+        });
         Display();
         
-        abilityContainer.RemoveAbility(slashAttack);
-        Display();
-        
-        void Adding()
+        void AddAbilities(List<IAbility> abilities)
         {
             Console.WriteLine("Adding abilities to the container...");
-            foreach (var ability in abilityContainer.GetAbilities())
+            foreach (var ability in abilities)
             {
+                abilityContainer.AddAbility(ability);
                 Console.WriteLine($"Added Attack: {ability.Name} (Effects: {ability.Effect})");
             }
             Console.WriteLine();
