@@ -1,6 +1,6 @@
 ﻿namespace Kata3;
 
-public class AttackAbility : Abilities, IAbility
+public class AttackAbility : Abilities
 {
     public AttackAbility(string name, string effect)
     {

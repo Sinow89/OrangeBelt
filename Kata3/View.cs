@@ -2,7 +2,7 @@
 
 public class View : Abilities
 {
-    private AbilityContainer<Abilities> abilityContainer;
+    private AbilityContainer<IAbility> abilityContainer;
 
     public View()
     {

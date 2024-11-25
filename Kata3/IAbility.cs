@@ -2,6 +2,6 @@
 
 public interface IAbility
 {
-    public string Name { get;}
-    public string Effect { get;}
+    public string Name { get; set; }
+    public string Effect { get; set; }
 }

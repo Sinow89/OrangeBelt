@@ -1,6 +1,6 @@
 ﻿namespace Kata3;
 
-public class HealAbility : Abilities, IAbility
+public class HealAbility : Abilities
 {
     public HealAbility(string name, string effect)
     {
