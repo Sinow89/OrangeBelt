@@ -2,8 +2,20 @@
 
 public class Combat
 {
-    
-    // but the AbilityContainer<T> in this class
+    public class AbilityContainer<T>
+    {
+        private List<T> abilities = new List<T>();
+
+        public void AddAbility(T ability)
+        {
+            abilities.Add(ability);
+        }
+
+        public IEnumerable<T> GetAbilities()
+        {
+            return abilities;
+        }
+    }
 }
 
 public class AttackAbility : IAbility

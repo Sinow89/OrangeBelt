@@ -1,7 +1,7 @@
 ﻿namespace Kata3;
 
 /*
- Expected Outpyt:
+ Expected Output:
  
  *Adding abilities to the container...
 - Added Attack: Slash Attack (Effect: Deals 15 damage)
