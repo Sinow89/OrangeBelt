@@ -21,6 +21,16 @@ class Program
 {
     static void Main()
     {
+       var abilityContainer = new AbilityContainer<Abilities>();
+       
+       abilityContainer.AddAbility(new AttackAbility("Fireball", "Deals 50 damage"));
+       abilityContainer.AddAbility(new HealAbility("Heal", "Restores 30 HP"));
+       
+       foreach (var ability in abilityContainer.GetAbilities())
+       {
+           Console.WriteLine(ability);
+       }
+       
        
     }
 }

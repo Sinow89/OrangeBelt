@@ -1,10 +1,7 @@
 ﻿namespace Kata3;
 
-public class AttackAbility : IAbility
+public class AttackAbility : Abilities, IAbility
 {
-    public string Name { get; set; }
-    public string Effect { get; set; }
-
     public AttackAbility(string name, string effect)
     {
         Name = name;
